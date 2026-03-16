@@ -98,7 +98,7 @@ tools_menu() {
                 pause ;;
              9) 
                 echo -e "\n${YELLOW}Installing SSL...${NC}"
-                bash <(curl -s https://raw.githubusercontent.com/nobita329/hub/refs/heads/main/Codinghub/toolbox/mengssl.sh
+                bash <(curl -s https://raw.githubusercontent.com/nobita329/hub/refs/heads/main/Codinghub/toolbox/mengssl.sh)
                 pause ;;
             0) 
                 break ;;
