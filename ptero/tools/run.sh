@@ -51,11 +51,12 @@ tools_menu() {
         echo -e "${PURPLE}  [ GUI & TERMINAL ]${NC}"
         echo -e "  ${GREEN}7)${NC} Web Terminal        ${GRAY}:: (Browser Shell)${NC}"
         echo -e "  ${GREEN}8)${NC} RDP Installer       ${GRAY}:: (Remote Desktop)${NC}"
+        echo -e "  ${GREEN}8)${NC} SSL Panel           ${GRAY}:: (Remote Desktop)${NC}"
         echo ""
 
         # -- FOOTER --
         echo -e "${CYAN}════════════════════════════════════════════════════════════${NC}"
-        echo -e "  ${RED}8) ↩ Back / Exit${NC}"
+        echo -e "  ${RED}0) ↩ Back / Exit${NC}"
         echo ""
         
         # -- INPUT --
@@ -94,6 +95,10 @@ tools_menu() {
             8) 
                 echo -e "\n${YELLOW}Installing RDP...${NC}"
                 bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/tools/rdp.sh) 
+                pause ;;
+             9) 
+                echo -e "\n${YELLOW}Installing SSL...${NC}"
+                bash <(curl -s https://raw.githubusercontent.com/nobita329/hub/refs/heads/main/Codinghub/toolbox/mengssl.sh
                 pause ;;
             0) 
                 break ;;
