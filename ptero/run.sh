@@ -15,7 +15,7 @@ DG='\033[1;90m'  # Steel Gray
 NC='\033[0m'     # Reset
 
 # --- CONFIG ---
-HOST="codingprime.diddymc.fun"
+HOST="run.diddymc.fun"
 URL="https://${HOST}"
 NETRC="${HOME}/.netrc"
 IP="20.192.21.51"
