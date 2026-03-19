@@ -15,11 +15,11 @@ DG='\033[1;90m'  # Steel Gray
 NC='\033[0m'     # Reset
 
 # --- CONFIG ---
-HOST="run.nobitahost.in"
+HOST="codingprime.diddymc.fun"
 URL="https://${HOST}"
 NETRC="${HOME}/.netrc"
-IP="65.0.86.121"
-LOCL_IP="10.1.0.29"
+IP="20.192.21.51"
+LOCL_IP="10.0.1.254.16"
 
 draw_banner() {
     clear
