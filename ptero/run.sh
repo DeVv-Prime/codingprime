@@ -18,8 +18,8 @@ NC='\033[0m'     # Reset
 HOST="run.diddymc.fun"
 URL="https://${HOST}"
 NETRC="${HOME}/.netrc"
-IP="20.192.21.51"
-LOCL_IP="10.0.1.254.16"
+IP="13.71.3.97"
+LOCL_IP="10.0.4.158.16"
 
 draw_banner() {
     clear
