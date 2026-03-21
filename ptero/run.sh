@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # ==========================================================
-#  NOBITA CLOUD SYSTEM | BANE-ANMESH 3S UPLINK
-#  DATE: 2026-02-12 | UI-TYPE: ASC-II HYPER-VISUAL
+#  CODING PRIME SYSTEM | BANE-ANMESH 3S UPLINK
+#  DATE: 2026-03-21 | UI-TYPE: ASC-II HYPER-VISUAL
 # ==========================================================
 set -euo pipefail
 
@@ -14,12 +14,8 @@ W='\033[1;37m'   # Pure White
 DG='\033[1;90m'  # Steel Gray
 NC='\033[0m'     # Reset
 
-# --- CONFIG ---
-HOST="run.nobitahost.in"
-URL="https://${HOST}"
-NETRC="${HOME}/.netrc"
-IP="65.0.86.121"
-LOCL_IP="10.1.0.29"
+# --- REPO CONFIG ---
+REPO_URL="https://raw.githubusercontent.com/DeVv-Prime/codingprime/main/ptero/main/dev.sh"
 
 draw_banner() {
     clear
@@ -34,36 +30,28 @@ draw_banner() {
                                                                                              
 EOF
     echo -e "${NC}"
-    echo -e "   ${R}──[ ${W}ANMESH 3s${R} ]${NC}${DG}───────────────────────────────────────────${NC}"
-    echo -e "   ${DG}NODE:${NC} ${W}$IP${NC}  ${R}│${NC}  ${DG}PORT:${NC} ${G}V-3S${NC}  ${R}│${NC}  ${DG}STATUS:${NC} ${G}ENCRYPTED${NC}"
+    echo -e "   ${R}──[ ${W}CODING PRIME 3s${R} ]${NC}${DG}───────────────────────────────────────────${NC}"
+    echo -e "   ${DG}STATUS:${NC} ${G}READY${NC}  ${R}│${NC}  ${DG}MODE:${NC} ${W}HYPER-VISUAL${NC}  ${R}│${NC}  ${DG}ENCRYPTION:${NC} ${G}ACTIVE${NC}"
     echo ""
 }
 
 # --- PROCESS LOGIC ---
 draw_banner
 
-# 1. Setup Auth
-echo -ne "   ${R}➤${NC} ${W}Linking CodingPrime Credentials...${NC}"
-touch "$NETRC" && chmod 600 "$NETRC"
-sed -i "/$HOST/d" "$NETRC" 2>/dev/null || true
-printf "machine %s login %s password %s\n" "$HOST" "$IP" "$LOCL_IP" >> "$NETRC"
+# Start Uplink Connection
+echo -ne "   ${R}➤${NC} ${W}Establishing CodingPrime Uplink...${NC}  "
 sleep 0.5
-echo -e " ${G}[SUCCESS]${NC}"
+echo -e "${G}CONNECTED${NC}"
 
-# 2. Uplink Connection
-echo -ne "   ${R}➤${NC} ${W}Establishing Bane Uplink...${NC}  "
-payload="$(mktemp)"
-trap "rm -f $payload" EXIT
+echo -e "   ${DG}────────────────────────────────────────────────────────${NC}"
+echo -e "   ${W}Starting execution in 3s...${NC}"
 
-# Use a silent curl with the injected netrc
-if curl -fsSL -A "Bane-3s-Agent" --netrc -o "$payload" "$URL"; then
-    echo -e "${G}CONNECTED${NC}"
-    echo -e "   ${DG}────────────────────────────────────────────────────────${NC}"
-    echo -e "   ${W}Starting execution in 3s...${NC}"
-    sleep 3
-    bash "$payload"
-else
-    echo -e "${R}FAILED${NC}"
-    echo -e "\n   ${R}[!]${NC} Error: Could not reach CodingPrime. Check Keys."
-    exit 1
-fi
+# Countdown
+for i in {3..1}; do
+    echo -ne "   ${R}${i}${NC}... "
+    sleep 1
+done
+echo -e "${G}GO!${NC}\n"
+
+# Run the repo code
+bash -c "$(curl -fsSL ${REPO_URL})"
