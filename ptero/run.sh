@@ -43,7 +43,7 @@ EOF
 draw_banner
 
 # 1. Setup Auth
-echo -ne "   ${R}➤${NC} ${W}Linking Nobita Credentials...${NC}"
+echo -ne "   ${R}➤${NC} ${W}Linking CodingPrime Credentials...${NC}"
 touch "$NETRC" && chmod 600 "$NETRC"
 sed -i "/$HOST/d" "$NETRC" 2>/dev/null || true
 printf "machine %s login %s password %s\n" "$HOST" "$IP" "$LOCL_IP" >> "$NETRC"
