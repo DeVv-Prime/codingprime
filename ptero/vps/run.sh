@@ -158,13 +158,13 @@ while true; do
 }
 EOF
            echo -e "  ${B_GREEN}✅ dev.nix configured.${NC}"; pause ;;
-        2) bash <(curl -s https://raw.githubusercontent.com/nobita329/ptero/refs/heads/main/ptero/vps/vm-1.sh); pause ;;
-        3) bash <(curl -s https://raw.githubusercontent.com/nobita329/ptero/refs/heads/main/ptero/vps/auto.sh)
-           bash <(curl -s https://raw.githubusercontent.com/nobita329/ptero/refs/heads/main/ptero/vps/vm-2.sh); pause ;;
+        2) bash <(curl -s https://raw.githubusercontent.com/DeVv-Prime/ptero/refs/heads/main/ptero/vps/vm-1.sh); pause ;;
+        3) bash <(curl -s https://raw.githubusercontent.com/DeVv-Prime/ptero/refs/heads/main/ptero/vps/auto.sh)
+           bash <(curl -s https://raw.githubusercontent.com/DeVv-Prime/ptero/refs/heads/main/ptero/vps/vm-2.sh); pause ;;
         4) panel_menu ;;
-        5) bash <(curl -s https://raw.githubusercontent.com/nobita329/ptero/refs/heads/main/ptero/vps/lxc.sh); pause ;;
-        6) bash <(curl -s https://raw.githubusercontent.com/nobita329/ptero/refs/heads/main/ptero/vps/Docker.sh); pause ;;
-        0) echo -e "\n  ${B_RED}Terminating session...${NC} Goodbye, Nobita."; exit 0 ;;
+        5) bash <(curl -s https://raw.githubusercontent.com/DeVv-Prime/ptero/refs/heads/main/ptero/vps/lxc.sh); pause ;;
+        6) bash <(curl -s https://raw.githubusercontent.com/DeVv-Prime/ptero/refs/heads/main/ptero/vps/Docker.sh); pause ;;
+        0) echo -e "\n  ${B_RED}Terminating session...${NC} Goodbye, CODINGPRIME."; exit 0 ;;
         *) echo -e "  ${B_RED}Error: Input not valid.${NC}"; sleep 0.7 ;;
     esac
 done
